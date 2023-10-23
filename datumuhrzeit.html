@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kreideleben: Datum und Uhrzeit</title>
+<link rel="shortcut icon" href="photos/favicon.ico">
+<link rel="stylesheet" href="comingsoon.css">
+</head>
+<body>
+
+<div class="topleft">
+  <h2>Datum und Uhrzeit</h2>
+</div>
+<div class="middle">
+  <span id="meinezeit"></span>
+</div>
+<div class="bottomleft">
+  <h3><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;<a href="datumuhrzeit.html">Datum und Uhrzeit</a>&nbsp;&nbsp;&nbsp;<a href="blog.html">Blog</a>&nbsp;&nbsp;&nbsp;<a href="kontakt.html">Kontakt</a></h3>
+</div>
+<!-- Following script is used to determine the current time in my time -->
+<script>
+// Get the beginning of the year (Central European Time, one day after the Perihelion)
+var beginningOfYear1 = new Date("2023-01-05T00:00:00.000+01:00").getTime(); //The year is hardcoded
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between beginning of the year and now
+  var distance = now - beginningOfYear1;
+  // If the count down is finished, write some text
+  // Time calculations in my own units
+  var tertial = Math.floor(distance / (5000 * 20 * 48 * 6 * 3 * 7 * 17)) + 1;
+  var week = Math.floor(distance % (5000 * 20 * 48 * 6 * 3 * 7 * 17) / (5000 * 20 * 48 * 6 * 3 * 7)) + 1;
+  var day = Math.floor(distance % (5000 * 20 * 48 * 6 * 3 * 7) / (5000 * 20 * 48 * 6 * 3)) + 1;
+  var eurocircs = Math.floor(distance % (5000 * 20 * 48 * 6 * 3) / (5000 * 20 * 48 * 6)) + 1;
+  var fingurs = Math.floor((distance % (5000 * 20 * 48 * 6)) / (5000 * 20 * 48));
+  var hects = Math.floor((distance % (5000 * 20 * 48)) / (5000 * 20));
+  var moments = Math.floor((distance % (5000 * 20)) / 5000);
+
+  // Display the result in the element with id="meine Zeit"
+  var timeMessage = ""; 
+  if (tertial > 3) timeMessage += "<h3>Jahr 1 ist schon vorbei. Schreib mir bitte eine Email, dass die Uhr neu eingestellt werden muss!</h3>";
+  else{
+    timeMessage +="<h1>" + fingurs + ":";
+    if(hects < 10) timeMessage += "0";
+    timeMessage += hects +  ":";
+    if(moments < 10) timeMessage += "0";
+    timeMessage += moments + "<h1>";
+    timeMessage += "<h2>";
+    if(eurocircs == 1) timeMessage += "Nacht";
+    else if(eurocircs == 2) timeMessage += "Tag";
+    else if(eurocircs == 3) timeMessage += "Abend";
+    else timeMessage += "FEHLER IM CODE beim Tagesabschnitt";
+    timeMessage += "</h2><h3>";
+    if(day == 1) timeMessage += "Erstag";
+    else if(day == 2) timeMessage += "Zweitag";
+    else if(day == 3) timeMessage += "Drittag";
+    else if(day == 4) timeMessage += "Viertag";
+    else if(day == 5) timeMessage += "F&uuml;nftag";
+    else if(day == 6) timeMessage += "Sechstag";
+    else if(day == 7) timeMessage += "Rasttag";
+    else timeMessage += "FEHLER IM CODE beim Tag";
+    timeMessage += "</h3><h3>Woche " + week + "</h3><h4>Tertial " + tertial + "</h4><h4>Jahr 1</h4>";//The year is hardcoded
+  }
+  document.getElementById("meinezeit").innerHTML = timeMessage;
+}, 1000);
+</script>
+</body>
+</html>
