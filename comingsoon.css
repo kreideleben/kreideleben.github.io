@@ -1,0 +1,43 @@
+/* Background color set to black so that text is visible before image loads */
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: black;
+  color: white;
+}
+
+html { 
+  background: url('photos/comingsoon_img.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Position text in the top-left corner */
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+/* Position text in the bottom-left corner */
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+/* Position text in the middle */
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* link color */
+a {
+  color: #00BFFF;
+}
