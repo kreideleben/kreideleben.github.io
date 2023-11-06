@@ -12,7 +12,8 @@
   <h1>Kreideleben</h1>
 </div>
 <div class="middle">
-  <h1><span id="countdown">Countdown zum ersten Video: </span></h1>
+  <p><a href="https://www.youtube.com/@kreideleben">Mein YouTube-Kanal</a></p>
+  <h1><span id="countdown">Cowntdown l&auml;dt... (Ist Javascript aktiviert?)</span></h1>
   <span id="explanation"></span>
 </div>
 <div class="bottomleft">
@@ -22,7 +23,7 @@
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("2023-11-08T16:00:00.000+01:00").getTime(); //Time when my first video will be online
-var firstVidLink = "https\:\/\/youtu.be/ouM7mKHfSeg"; //Link to first video (for now, the link just points to the channel)
+var newVidLink = "https\:\/\/youtu.be/ouM7mKHfSeg"; //Link to new video
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -34,9 +35,10 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0){
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "<a href=\"" + firstVidLink + "\">Video 1</a>";
+    document.getElementById("countdown").innerHTML = "<a href=\"" + newVidLink + "\">Video 1</a>";
     document.getElementById("explanation").innerHTML = "";
   }
+  else{
     // Time calculations for days, terzidays, fingurs, hects and moments
     var days = Math.floor(distance / (5000 * 20 * 48 * 6 * 3));
     var terzidays = Math.floor(distance % (5000 * 20 * 48 * 6 * 3) / (5000 * 20 * 48 * 6));
@@ -61,9 +63,9 @@ var x = setInterval(function() {
     }
     if(moments == 1) countdownMessage += "ein Moment";
     else countdownMessage += moments + " Momente";
-    if(distance < 100000) countdownMessage += "<br /><a href=\"" + firstVidLink + "\">Link zum ersten Video</a>";
     document.getElementById("countdown").innerHTML = countdownMessage;
     document.getElementById("explanation").innerHTML = "<p><small><a href=\"blog.html\">Warum ist der Countdown so ungew&ouml;hnlich?</a></small></p>";
+  }
 }, 1000);
 </script>
 </body>
