@@ -12,8 +12,8 @@
   <h1>Kreideleben</h1>
 </div>
 <div class="middle">
-  <p><a href="https://www.youtube.com/@kreideleben">Mein YouTube-Kanal</a></p>
-  <h1><span id="countdown">Cowntdown l&auml;dt... (Ist Javascript aktiviert?)</span></h1>
+  <h2><a href="https://www.youtube.com/@kreideleben">Mein YouTube-Kanal</a></h2>
+  <span id="countdown">Cowntdown l&auml;dt... (Dauert bis zu 5 Sekunden. Funktioniert nur, wenn Javascript aktiviert ist.)</span>
   <span id="explanation"></span>
 </div>
 <div class="bottomleft">
@@ -22,9 +22,9 @@
 <!-- Following code is taken from w3schools, slightly edited for my purposes -->
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("2023-11-08T16:00:00.000+01:00").getTime(); //Time when my first video will be online
+var countDownDate = new Date("2023-11-08T16:00:00.000+01:00").getTime(); //Time when next video will be online
 var newVidLink = "https\:\/\/youtu.be/ouM7mKHfSeg"; //Link to new video
-// Update the count down every 1 second
+// Update the count down every 5 seconds
 var x = setInterval(function() {
 
   // Get today's date and time
@@ -48,6 +48,7 @@ var x = setInterval(function() {
   
     // Display the result in the element with id="countdown"
     var countdownMessage = "Countdown zum ersten Video: <br />";
+    //var countdownMessage = "Countdown zum n&auml;chsten Video: <br />"; //use this after the first video is online
     if(days != 0) {
       if(days > 1) countdownMessage += days + " Tage, ";
       else countdownMessage += "ein Tag, ";
@@ -63,10 +64,9 @@ var x = setInterval(function() {
     }
     if(moments == 1) countdownMessage += "ein Moment";
     else countdownMessage += moments + " Momente";
-    document.getElementById("countdown").innerHTML = countdownMessage;
-    document.getElementById("explanation").innerHTML = "<p><small><a href=\"blog.html\">Warum ist der Countdown so ungew&ouml;hnlich?</a></small></p>";
+    document.getElementById("countdown").innerHTML = "<h1>" + countdownMessage + "</h1>";
   }
-}, 1000);
+}, 1000); // Update the count down every 5 seconds
 </script>
 </body>
 </html>
