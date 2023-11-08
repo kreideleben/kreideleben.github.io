@@ -14,7 +14,7 @@
 <div class="middle">
   <h2><a href="https://www.youtube.com/@kreideleben">Mein YouTube-Kanal</a></h2>
   <p><a href="https://youtu.be/ouM7mKHfSeg">Video 1</a></p>
-  <span id="countdown">Cowntdown l&auml;dt... (Dauert bis zu 5 Sekunden. Funktioniert nur, wenn Javascript aktiviert ist.)</span>
+  <span id="countdown"><h1>Countdown zum n&auml;chsten Video: <br />L&auml;dt ... </h1> (Dauert einen Moment. Ist Javascript aktiviert? Sonst funktioniert das nicht.)</span>
 </div>
 <div class="bottomleft">
   <h3><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;<a href="datumuhrzeit.html">Datum und Uhrzeit</a>&nbsp;&nbsp;&nbsp;<a href="blog.html">Blog</a>&nbsp;&nbsp;&nbsp;<a href="kontakt.html">Kontakt</a></h3>
@@ -47,7 +47,6 @@ var x = setInterval(function() {
   
     // Display the result in the element with id="countdown"
     var countdownMessage = "Countdown zum n&auml;chsten Video: <br />";
-    //var countdownMessage = "Countdown zum n&auml;chsten Video: <br />"; //use this after the first video is online
     if(days != 0) {
       if(days > 1) countdownMessage += days + " Tage, ";
       else countdownMessage += "1 Tag, ";
