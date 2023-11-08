@@ -13,8 +13,8 @@
 </div>
 <div class="middle">
   <h2><a href="https://www.youtube.com/@kreideleben">Mein YouTube-Kanal</a></h2>
+  <p><a href="https://youtu.be/ouM7mKHfSeg">Video 1</a></p>
   <span id="countdown">Cowntdown l&auml;dt... (Dauert bis zu 5 Sekunden. Funktioniert nur, wenn Javascript aktiviert ist.)</span>
-  <span id="explanation"></span>
 </div>
 <div class="bottomleft">
   <h3><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;<a href="datumuhrzeit.html">Datum und Uhrzeit</a>&nbsp;&nbsp;&nbsp;<a href="blog.html">Blog</a>&nbsp;&nbsp;&nbsp;<a href="kontakt.html">Kontakt</a></h3>
@@ -22,8 +22,8 @@
 <!-- Following code is taken from w3schools, slightly edited for my purposes -->
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("2023-11-08T16:00:00.000+01:00").getTime(); //Time when next video will be online
-var newVidLink = "https\:\/\/youtu.be/ouM7mKHfSeg"; //Link to new video
+var countDownDate = new Date("2023-11-15T16:00:00.000+01:00").getTime(); //Time when next video will be online
+var newVidLink = "https\:\/\/www.youtube.com/@kreideleben"; //Link to new video (while it is not yet ready, link is to the channel)
 // Update the count down every 5 seconds
 var x = setInterval(function() {
 
@@ -35,8 +35,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0){
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "<a href=\"" + newVidLink + "\">Video 1</a>";
-    document.getElementById("explanation").innerHTML = "";
+    document.getElementById("countdown").innerHTML = "<a href=\"" + newVidLink + "\">Video 2</a>";
   }
   else{
     // Time calculations for days, terzidays, fingurs, hects and moments
@@ -47,22 +46,22 @@ var x = setInterval(function() {
     var moments = Math.floor((distance % (5000 * 20)) / 5000);
   
     // Display the result in the element with id="countdown"
-    var countdownMessage = "Countdown zum ersten Video: <br />";
+    var countdownMessage = "Countdown zum n&auml;chsten Video: <br />";
     //var countdownMessage = "Countdown zum n&auml;chsten Video: <br />"; //use this after the first video is online
     if(days != 0) {
       if(days > 1) countdownMessage += days + " Tage, ";
-      else countdownMessage += "ein Tag, ";
+      else countdownMessage += "1 Tag, ";
     }
     if(terzidays != 0) {
       if (terzidays > 1) countdownMessage += terzidays + " Terzitage, ";
-      else countdownMessage += "ein Terzitag, ";
+      else countdownMessage += "1 Terzitag, ";
     }
     if(fingurs != 0) {countdownMessage += fingurs + " Fingar, ";}
     if(hects != 0) {
       if(hects > 1) countdownMessage += hects + " Hekten und ";
-      else countdownMessage += "ein Hektos und ";
+      else countdownMessage += "1 Hektos und ";
     }
-    if(moments == 1) countdownMessage += "ein Moment";
+    if(moments == 1) countdownMessage += "1 Moment";
     else countdownMessage += moments + " Momente";
     document.getElementById("countdown").innerHTML = "<h1>" + countdownMessage + "</h1>";
   }
