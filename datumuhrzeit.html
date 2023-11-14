@@ -88,12 +88,12 @@ var x = setInterval(function() {
   else if(day == 9 && betweenYears) timeMessage += "Neuntag";
   else timeMessage += "FEHLER IM CODE beim Tag";
   timeMessage += "</h3>";
-  var weekMessage = "Woche" + week;
-  var tertialMessage = "Tertial" + tertial;
-  var yearMessage = "Jahr" + year;
+  var weekMessage = "Woche " + week;
+  var tertialMessage = "Tertial " + tertial;
+  var yearMessage = "Jahr " + year;
   if(betweenYears){
     tertialMessage = "Tage zwischen";
-    yearMessage = "Jahr" + year + " und " + nextYear;
+    yearMessage = "Jahr " + year + " und " + nextYear;
   }
   if(yearOverflow) yearMessage = "nach Jahr" + maxYear;
   if(!betweenYears && !yearOverflow) timeMessage += "<h3>" + weekMessage + "</h3>";
