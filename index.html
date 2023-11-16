@@ -13,7 +13,7 @@
 </div>
 <div class="middle">
   <h2><a href="https://www.youtube.com/@kreideleben">Mein YouTube-Kanal</a></h2>
-  <p><a href="https://youtu.be/ouM7mKHfSeg">Video 1</a></p>
+  <p><a href="https://youtu.be/ouM7mKHfSeg">Video 1</a>&nbsp;&VerticalLine;&nbsp;<a href="https://youtu.be/RRwaXwITiP4">Video 2</a></p>
   <span id="countdown"><h1>Countdown zum n&auml;chsten Video: <br />L&auml;dt ... </h1> (Dauert einen Moment. Ist Javascript aktiviert? Sonst funktioniert das nicht.)</span>
 </div>
 <div class="bottomleft">
@@ -23,7 +23,7 @@
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("2023-11-15T16:00:00.000+01:00").getTime(); //Time when next video will be online
-var newVidLink = "https\:\/\/youtu.be/RRwaXwITiP4"; //Link to new video (while it is not yet ready, link is to the channel)
+var newVidLink = "https\:\/\/www.youtube.com/@kreideleben"; //Link to new video (while it is not yet ready, link is to the channel)
 // Update the count down every 5 seconds
 var x = setInterval(function() {
 
@@ -35,7 +35,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0){
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "<a href=\"" + newVidLink + "\">Video 2</a>";
+    document.getElementById("countdown").innerHTML = "<a href=\"" + newVidLink + "\">Video 3</a>";
   }
   else{
     // Time calculations for days, terzidays, fingurs, hects and moments
